@@ -26,3 +26,22 @@ videoDinamika2 = "BAACAgIAAxkBAAIKAmTf4eLBIddePfluFHkDiNAf4djOAAKuNQACvI0BS-3Qk4
 videoC1 = "BAACAgIAAxkBAAIKV2TjE0K3X1gAAefom0oOHKXriiVZaAACujsAAsftGUsYUummKOkQrTAE"
 videoC2 = "BAACAgIAAxkBAAIKV2TjE0K3X1gAAefom0oOHKXriiVZaAACujsAAsftGUsYUummKOkQrTAE"
 
+#Линал (Первое видео нужно выгрузить из вк)
+videoLinal1 = "BAACAgIAAxkBAAIKdGTjRfK7KgvtExqcu6pOeq8p2qrcAAJgOgACx-0hS2PrKzc8TOZFMAQ"
+videoLinal2 = "BAACAgIAAxkBAAIKdGTjRfK7KgvtExqcu6pOeq8p2qrcAAJgOgACx-0hS2PrKzc8TOZFMAQ"
+
+#Тервер
+videoTerver1 = "BAACAgIAAxkBAAIKeGTjRhysnKe-UAUDabcMyFbxjK9HAAJhOgACx-0hS0JmIaj8eEmJMAQ"
+videoTerver2 = "BAACAgIAAxkBAAIKemTjRmQhKlwO1tHIcqf8NdWCKpODAAJoOgACx-0hS-ZsW5z2C6qrMAQ"
+
+#Матфиз (Единственное видео нужно выгрузить из вк)
+videoMatfiz1 = "BAACAgIAAxkBAAIKemTjRmQhKlwO1tHIcqf8NdWCKpODAAJoOgACx-0hS-ZsW5z2C6qrMAQ"
+
+#Химия и органическая химия
+
+
+#Физхим (Единственное видео нужно выгрузить из вк)
+
+videFizHim = "BAACAgIAAxkBAAIKemTjRmQhKlwO1tHIcqf8NdWCKpODAAJoOgACx-0hS-ZsW5z2C6qrMAQ"
+
+#Экономическое направление

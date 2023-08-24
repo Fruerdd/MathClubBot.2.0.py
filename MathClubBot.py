@@ -1,3 +1,5 @@
+import sqlite3
+
 import requests
 import logging
 from aiogram.types import ContentType, Message
@@ -13,13 +15,18 @@ from aiogram.dispatcher.filters import Text
 from Texts import START_TEXT, HELP_TEXT, START_VIDEOS, MATH31, MATH41, MATH42, MATH43, MATH44, \
     MATH51, MATH52, MATH53, MATH54, MATH61, MATH62, MATH63, MATH64, MATH71, MATH72, PHYS32, PHYS411, \
     PHYS412, PHYS413, PHYS414, PHYS415, PHYS511, PHYS512, PHYS513, PHYS514, PHYS515, PHYS611, PHYS731, \
-    PHYS732, PROG33, PROG742, PROG431, PROG432, PROG433, PROG531, PROG631, PROG741
+    PHYS732, PROG33, PROG742, PROG431, PROG432, PROG433, PROG531, PROG631, PROG741, LINAL441, \
+    LINAL541, LINAL641, LINAL751, LINAL752, TERVER451, TERVER551, TERVER651, TERVER761, \
+    TERVER762, MATFIZ561, MATFIZ661, MATFIZ771, MATFIZ772, FIZHIM581, FIZHIM38, FIZHIM481, \
+    FIZHIM582, RASSILKA23, POLEZNOVISMAT, POLEZNO22, POLEZNOPROGA, POLEZNOEKONOM, POLEZNOFIZIKA, \
+    POLEZNAYAPODPISKA1
 from Media.videos import videoIntegral1, videoIntegral2, videoDiffuri1, videoDiffuri2, \
     videoRyadi1, videoRyadi2, videoPredeli1, videoPredeli2, videoKinematika1, videoKinematika2, \
     videoElectichestvo1, videoElectichestvo2, videoMKT1, videoMKT2, videoMagnetism1, videoMagnetism2, \
-    videoDinamika1, videoDinamika2, videoC1, videoC2
+    videoDinamika1, videoDinamika2, videoC1, videoC2, videoLinal1, videoLinal2, videoMatfiz1, videoTerver1, \
+    videoTerver2, videFizHim
 from Media.photos import photoRyadi, photoIntegrali, photoDiffuri, photoPredeli, photoPhysics, \
-    photoC
+    photoC, photoLinal, photoMatfiz, photoTerver
 from inlineKB import create_inline_keyboard_section_1, create_inline_keyboard_section_21,\
     create_inline_keyboard_section_31, create_inline_keyboard_section_41, \
     create_inline_keyboard_section_42, create_inline_keyboard_section_43, \
@@ -41,7 +48,19 @@ from inlineKB import create_inline_keyboard_section_1, create_inline_keyboard_se
     create_inline_keyboard_section_732, create_inline_keyboard_section_33, \
     create_inline_keyboard_section_531, create_inline_keyboard_section_431, \
     create_inline_keyboard_section_741, create_inline_keyboard_section_742, \
-    create_inline_keyboard_section_631
+    create_inline_keyboard_section_631, create_inline_keyboard_section_441, \
+    create_inline_keyboard_section_541, create_inline_keyboard_section_641, \
+    create_inline_keyboard_section_751, create_inline_keyboard_section_752, \
+    create_inline_keyboard_section_451, create_inline_keyboard_section_551, \
+    create_inline_keyboard_section_651, create_inline_keyboard_section_761, \
+    create_inline_keyboard_section_762, create_inline_keyboard_section_561, \
+    create_inline_keyboard_section_661, create_inline_keyboard_section_771, \
+    create_inline_keyboard_section_772, create_inline_keyboard_section_481, \
+    create_inline_keyboard_section_581, create_inline_keyboard_section_582, \
+    create_inline_keyboard_section_37, create_inline_keyboard_section_38, \
+    create_inline_keyboard_section_22, create_inline_keyboard_section_1001, \
+    create_inline_keyboard_section_1002, create_inline_keyboard_section_1003, \
+    create_inline_keyboard_section_1004
 bot = Bot(TOKEN_API)
 dp = Dispatcher(bot)
 url = f"https://api.telegram.org/bot{TOKEN_API}/getUpdates"
@@ -268,11 +287,174 @@ async def process_callback_section(callback_query: types.CallbackQuery):
         await bot.send_message(callback_query.from_user.id,
                                text=f"{callback_query.from_user.full_name}" + PROG742,
                                reply_markup=keyboard)
+    elif section == 441:
+        keyboard = create_inline_keyboard_section_441()
+        await bot.send_video(callback_query.from_user.id, video=videoLinal1,
+                             caption=LINAL441,
+                             reply_markup=keyboard)
+    elif section == 541:
+        keyboard = create_inline_keyboard_section_541()
+        await bot.send_video(callback_query.from_user.id, video=videoLinal2,
+                             caption=LINAL541,
+                             reply_markup=keyboard)
+    elif section == 641:
+        keyboard = create_inline_keyboard_section_641()
+        await bot.send_photo(callback_query.from_user.id, photo=photoLinal,
+                             caption=LINAL641,
+                             reply_markup=keyboard)
+    elif section == 751:
+        keyboard = create_inline_keyboard_section_751()
+        await bot.send_message(callback_query.from_user.id,
+                               text=f"{callback_query.from_user.full_name}" + LINAL751,
+                               reply_markup=keyboard)
+    elif section == 752:
+        keyboard = create_inline_keyboard_section_752()
+        await bot.send_message(callback_query.from_user.id,
+                               text=f"{callback_query.from_user.full_name}" + LINAL752,
+                               reply_markup=keyboard)
+    elif section == 451:
+        keyboard = create_inline_keyboard_section_451()
+        await bot.send_video(callback_query.from_user.id, video=videoTerver1,
+                             caption=TERVER451,
+                             reply_markup=keyboard)
+    elif section == 551:
+        keyboard = create_inline_keyboard_section_551()
+        await bot.send_video(callback_query.from_user.id, video=videoTerver2,
+                             caption=TERVER551,
+                             reply_markup=keyboard)
+    elif section == 651:
+        keyboard = create_inline_keyboard_section_651()
+        await bot.send_photo(callback_query.from_user.id, photo=photoTerver,
+                             caption=TERVER651,
+                             reply_markup=keyboard)
+    elif section == 761:
+        keyboard = create_inline_keyboard_section_761()
+        await bot.send_message(callback_query.from_user.id,
+                               text=f"{callback_query.from_user.full_name}" + TERVER761,
+                               reply_markup=keyboard)
+    elif section == 762:
+        keyboard = create_inline_keyboard_section_762()
+        await bot.send_message(callback_query.from_user.id,
+                               text=f"{callback_query.from_user.full_name}" + TERVER762,
+                               reply_markup=keyboard)
+    elif section == 561:
+        keyboard = create_inline_keyboard_section_561()
+        await bot.send_video(callback_query.from_user.id, video=videoMatfiz1,
+                             caption=MATFIZ561,
+                             reply_markup=keyboard)
+    elif section == 661:
+        keyboard = create_inline_keyboard_section_661()
+        await bot.send_photo(callback_query.from_user.id, photo=photoMatfiz,
+                             caption=MATFIZ661,
+                             reply_markup=keyboard)
+    elif section == 771:
+        keyboard = create_inline_keyboard_section_771()
+        await bot.send_message(callback_query.from_user.id,
+                               text=f"{callback_query.from_user.full_name}" + MATFIZ771,
+                               reply_markup=keyboard)
+    elif section == 772:
+        keyboard = create_inline_keyboard_section_772()
+        await bot.send_message(callback_query.from_user.id,
+                               text=f"{callback_query.from_user.full_name}" + MATFIZ772,
+                               reply_markup=keyboard)
+    elif section == 37:
+        keyboard = create_inline_keyboard_section_37()
+        await bot.send_message(callback_query.from_user.id,
+                               text=f"{callback_query.from_user.full_name}" + MATFIZ772,
+                               reply_markup=keyboard)
+    elif section == 471:
+        await bot.send_message(callback_query.from_user.id,
+                               text=f"{callback_query.from_user.full_name}" + PROG741)
+    elif section == 472:
+        await bot.send_message(callback_query.from_user.id,
+                               text=f"{callback_query.from_user.full_name}" + PROG742)
+    elif section == 38:
+        keyboard = create_inline_keyboard_section_38()
+        await bot.send_message(callback_query.from_user.id,
+                               text=f"{callback_query.from_user.full_name}" + FIZHIM38,
+                               reply_markup=keyboard)
+    elif section == 481:
+        keyboard = create_inline_keyboard_section_481()
+        await bot.send_video(callback_query.from_user.id, video=videoMatfiz1,
+                             caption=FIZHIM481,
+                             reply_markup=keyboard)
+    elif section == 581:
+        keyboard = create_inline_keyboard_section_581()
+        await bot.send_message(callback_query.from_user.id,
+                               text=f"{callback_query.from_user.full_name}" + FIZHIM581,
+                               reply_markup=keyboard)
+    elif section == 582:
+        keyboard = create_inline_keyboard_section_582()
+        await bot.send_message(callback_query.from_user.id,
+                               text=f"{callback_query.from_user.full_name}" + FIZHIM582,
+                               reply_markup=keyboard)
+    elif section == 491:
+        await bot.send_message(callback_query.from_user.id,
+                               text=f"{callback_query.from_user.full_name}" + PROG741)
+    elif section == 492:
+        await bot.send_message(callback_query.from_user.id,
+                               text=f"{callback_query.from_user.full_name}" + PROG742)
+    elif section == 493:
+        await bot.send_message(callback_query.from_user.id,
+                               text=f"{callback_query.from_user.full_name}" + PROG741)
+    elif section == 494:
+        await bot.send_message(callback_query.from_user.id,
+                               text=f"{callback_query.from_user.full_name}" + PROG742)
+    elif section == 23:
+        await bot.send_message(callback_query.from_user.id,
+                               text=RASSILKA23)
+    elif section == 22:
+        keyboard = create_inline_keyboard_section_22()
+        await bot.send_message(callback_query.from_user.id,
+                               text=POLEZNO22,
+                               reply_markup=keyboard)
+    elif section == 1001:
+        keyboard = create_inline_keyboard_section_1001()
+        await bot.send_message(callback_query.from_user.id,
+                               text=POLEZNOVISMAT,
+                               reply_markup=keyboard)
+    elif section == 1002:
+        keyboard = create_inline_keyboard_section_1002()
+        await bot.send_message(callback_query.from_user.id,
+                               text=POLEZNOFIZIKA,
+                               reply_markup=keyboard)
+    elif section == 1003:
+        keyboard = create_inline_keyboard_section_1003()
+        await bot.send_message(callback_query.from_user.id,
+                               text=POLEZNOPROGA,
+                               reply_markup=keyboard)
+    elif section == 1004:
+        keyboard = create_inline_keyboard_section_1004()
+        await bot.send_message(callback_query.from_user.id,
+                               text=POLEZNOEKONOM,
+                               reply_markup=keyboard)
+    elif section == 1000:
+        await asyncio.sleep(10)
+        await bot.send_message(chat_id=callback_query.from_user.id,
+                               text=POLEZNAYAPODPISKA1)
+        await bot.send_message(chat_id=callback_query.from_user.id,
+                               text="А рассылочка то работает и даже удобнее")
 
 
 @dp.message_handler(commands=['start'])
 async def start(message: types.Message):
     markup = create_inline_keyboard_section_1()
+    connect = sqlite3.connect('users.db')
+    cursor = connect.cursor()
+
+    cursor.execute("""CREATE TABLE IF NOT EXISTS login_id(
+        id INTEGER,
+        
+    )""")
+    connect.commit()
+
+    people_id = message.chat.id
+    cursor.execute(f"SELECT id FROM login_id WHERE id = {people_id}")
+    data = cursor.fetchone()
+    if data is None:
+        user_id = [message.chat.id]
+        cursor.execute("INSERT INTO login_id VALUES(?);", user_id)
+        connect.commit()
     await message.answer(f"Привет. {message.chat.full_name}!" + START_TEXT,
                          reply_markup=markup)
 

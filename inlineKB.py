@@ -16,8 +16,8 @@ def create_inline_keyboard_section_21():
         InlineKeyboardButton("Высшая математика", callback_data="section_31"),
         InlineKeyboardButton("Физика", callback_data="section_32"),
         InlineKeyboardButton("Программирование", callback_data="section_33"),
-        InlineKeyboardButton("Линал & Ангем", callback_data="section_34"),
-        InlineKeyboardButton("Тервер & Матстат", callback_data="section_35"),
+        InlineKeyboardButton("Линал & Ангем", callback_data="section_441"),
+        InlineKeyboardButton("Тервер & Матстат", callback_data="section_451"),
         InlineKeyboardButton("Матфиз", callback_data="section_36"),
         InlineKeyboardButton("Химия & органич. химия", callback_data="section_37"),
         InlineKeyboardButton("Физхим", callback_data="section_38"),
@@ -79,7 +79,7 @@ def create_inline_keyboard_section_44():
 def create_inline_keyboard_section_51():
     buttons = [
         InlineKeyboardButton("Купить курс", callback_data='section_61'),
-        InlineKeyboardButton("Связаться с отделом заботы", callback_data='section_1000'),
+        InlineKeyboardButton("Связаться с отделом заботы", callback_data='section_23'),
         InlineKeyboardButton("Назад", callback_data='section_41'),
     ]
     return InlineKeyboardMarkup().add(*buttons)
@@ -88,7 +88,7 @@ def create_inline_keyboard_section_51():
 def create_inline_keyboard_section_52():
     buttons = [
         InlineKeyboardButton("Купить курс", callback_data='section_62'),
-        InlineKeyboardButton("Связаться с отделом заботы", callback_data='section_1000'),
+        InlineKeyboardButton("Связаться с отделом заботы", callback_data='section_23'),
         InlineKeyboardButton("Назад", callback_data='section_42'),
     ]
     return InlineKeyboardMarkup().add(*buttons)
@@ -97,7 +97,7 @@ def create_inline_keyboard_section_52():
 def create_inline_keyboard_section_53():
     buttons = [
         InlineKeyboardButton("Купить курс", callback_data='section_63'),
-        InlineKeyboardButton("Связаться с отделом заботы", callback_data='section_1000'),
+        InlineKeyboardButton("Связаться с отделом заботы", callback_data='section_23'),
         InlineKeyboardButton("Назад", callback_data='section_43'),
     ]
     return InlineKeyboardMarkup().add(*buttons)
@@ -106,7 +106,7 @@ def create_inline_keyboard_section_53():
 def create_inline_keyboard_section_54():
     buttons = [
         InlineKeyboardButton("Купить курс", callback_data='section_64'),
-        InlineKeyboardButton("Связаться с отделом заботы", callback_data='section_1000'),
+        InlineKeyboardButton("Связаться с отделом заботы", callback_data='section_23'),
         InlineKeyboardButton("Назад", callback_data='section_44'),
     ]
     return InlineKeyboardMarkup().add(*buttons)
@@ -117,7 +117,7 @@ def create_inline_keyboard_section_61():
         InlineKeyboardButton("Оптимум", callback_data='section_711'),
         InlineKeyboardButton("Ультра", callback_data='section_721'),
         InlineKeyboardButton("Хочу в рассрочку", callback_data='section_73'),
-        InlineKeyboardButton("Связаться с отделом заботы", callback_data='section_1000'),
+        InlineKeyboardButton("Связаться с отделом заботы", callback_data='section_23'),
         InlineKeyboardButton("Назад", callback_data='section_41'),
     ]
     return InlineKeyboardMarkup().add(*buttons)
@@ -128,7 +128,7 @@ def create_inline_keyboard_section_62():
         InlineKeyboardButton("Оптимум", callback_data='section_712'),
         InlineKeyboardButton("Ультра", callback_data='section_722'),
         InlineKeyboardButton("Хочу в рассрочку", callback_data='section_73'),
-        InlineKeyboardButton("Связаться с отделом заботы", callback_data='section_1000'),
+        InlineKeyboardButton("Связаться с отделом заботы", callback_data='section_23'),
         InlineKeyboardButton("Назад", callback_data='section_42'),
     ]
     return InlineKeyboardMarkup().add(*buttons)
@@ -139,7 +139,7 @@ def create_inline_keyboard_section_63():
         InlineKeyboardButton("Оптимум", callback_data='section_713'),
         InlineKeyboardButton("Ультра", callback_data='section_723'),
         InlineKeyboardButton("Хочу в рассрочку", callback_data='section_73'),
-        InlineKeyboardButton("Связаться с отделом заботы", callback_data='section_1000'),
+        InlineKeyboardButton("Связаться с отделом заботы", callback_data='section_23'),
         InlineKeyboardButton("Назад", callback_data='section_43'),
     ]
     return InlineKeyboardMarkup().add(*buttons)
@@ -150,7 +150,7 @@ def create_inline_keyboard_section_64():
         InlineKeyboardButton("Оптимум", callback_data='section_714'),
         InlineKeyboardButton("Ультра", callback_data='section_724'),
         InlineKeyboardButton("Хочу в рассрочку", callback_data='section_73'),
-        InlineKeyboardButton("Связаться с отделом заботы", callback_data='section_1000'),
+        InlineKeyboardButton("Связаться с отделом заботы", callback_data='section_23'),
         InlineKeyboardButton("Назад", callback_data='section_44'),
     ]
     return InlineKeyboardMarkup().add(*buttons)
@@ -282,7 +282,7 @@ def create_inline_keyboard_section_415():
 def create_inline_keyboard_section_511():
     buttons = [
         InlineKeyboardButton("Купить курс", callback_data='section_611'),
-        InlineKeyboardButton("Связаться с отделом заботы", callback_data='section_1000'),
+        InlineKeyboardButton("Связаться с отделом заботы", callback_data='section_23'),
         InlineKeyboardButton("Назад", callback_data='section_32'),
     ]
     return InlineKeyboardMarkup().add(*buttons)
@@ -291,7 +291,7 @@ def create_inline_keyboard_section_511():
 def create_inline_keyboard_section_512():
     buttons = [
         InlineKeyboardButton("Купить курс", callback_data='section_611'),
-        InlineKeyboardButton("Связаться с отделом заботы", callback_data='section_1000'),
+        InlineKeyboardButton("Связаться с отделом заботы", callback_data='section_23'),
         InlineKeyboardButton("Назад", callback_data='section_32'),
     ]
     return InlineKeyboardMarkup().add(*buttons)
@@ -300,7 +300,7 @@ def create_inline_keyboard_section_512():
 def create_inline_keyboard_section_513():
     buttons = [
         InlineKeyboardButton("Купить курс", callback_data='section_611'),
-        InlineKeyboardButton("Связаться с отделом заботы", callback_data='section_1000'),
+        InlineKeyboardButton("Связаться с отделом заботы", callback_data='section_23'),
         InlineKeyboardButton("Назад", callback_data='section_32'),
     ]
     return InlineKeyboardMarkup().add(*buttons)
@@ -309,7 +309,7 @@ def create_inline_keyboard_section_513():
 def create_inline_keyboard_section_514():
     buttons = [
         InlineKeyboardButton("Купить курс", callback_data='section_611'),
-        InlineKeyboardButton("Связаться с отделом заботы", callback_data='section_1000'),
+        InlineKeyboardButton("Связаться с отделом заботы", callback_data='section_23'),
         InlineKeyboardButton("Назад", callback_data='section_32'),
     ]
     return InlineKeyboardMarkup().add(*buttons)
@@ -318,7 +318,7 @@ def create_inline_keyboard_section_514():
 def create_inline_keyboard_section_515():
     buttons = [
         InlineKeyboardButton("Купить курс", callback_data='section_611'),
-        InlineKeyboardButton("Связаться с отделом заботы", callback_data='section_1000'),
+        InlineKeyboardButton("Связаться с отделом заботы", callback_data='section_23'),
         InlineKeyboardButton("Назад", callback_data='section_32'),
     ]
     return InlineKeyboardMarkup().add(*buttons)
@@ -329,7 +329,7 @@ def create_inline_keyboard_section_611():
         InlineKeyboardButton("Оптимум", callback_data='section_731'),
         InlineKeyboardButton("Ультра", callback_data='section_732'),
         InlineKeyboardButton("Хочу в рассрочку", callback_data='section_73'),
-        InlineKeyboardButton("Связаться с отделом заботы", callback_data='section_1000'),
+        InlineKeyboardButton("Связаться с отделом заботы", callback_data='section_23'),
         InlineKeyboardButton("Назад", callback_data='section_32'),
     ]
     return InlineKeyboardMarkup().add(*buttons)
@@ -375,7 +375,7 @@ def create_inline_keyboard_section_431():
 def create_inline_keyboard_section_531():
     buttons = [
         InlineKeyboardButton("Купить курс", callback_data='section_631'),
-        InlineKeyboardButton("Связаться с отделом заботы", callback_data='section_1000'),
+        InlineKeyboardButton("Связаться с отделом заботы", callback_data='section_23'),
         InlineKeyboardButton("Назад", callback_data='section_33'),
     ]
     return InlineKeyboardMarkup().add(*buttons)
@@ -386,7 +386,7 @@ def create_inline_keyboard_section_631():
         InlineKeyboardButton("Оптимум", callback_data='section_741'),
         InlineKeyboardButton("Ультра", callback_data='section_742'),
         InlineKeyboardButton("Хочу в рассрочку", callback_data='section_73'),
-        InlineKeyboardButton("Связаться с отделом заботы", callback_data='section_1000'),
+        InlineKeyboardButton("Связаться с отделом заботы", callback_data='section_23'),
         InlineKeyboardButton("Назад", callback_data='section_33'),
     ]
     return InlineKeyboardMarkup().add(*buttons)
@@ -412,29 +412,29 @@ def create_inline_keyboard_section_742():
 
 def create_inline_keyboard_section_441():
     buttons = [
-        InlineKeyboardButton("Разбор еще одной задачи", callback_data='section_511'),
-        InlineKeyboardButton("Купить курс", callback_data='section_611'),
-        InlineKeyboardButton("Назад", callback_data='section_32'),
+        InlineKeyboardButton("Разбор еще одной задачи", callback_data='section_541'),
+        InlineKeyboardButton("Купить курс", callback_data='section_641'),
+        InlineKeyboardButton("Назад", callback_data='section_21'),
     ]
     return InlineKeyboardMarkup().add(*buttons)
 
 
 def create_inline_keyboard_section_541():
     buttons = [
-        InlineKeyboardButton("Купить курс", callback_data='section_631'),
-        InlineKeyboardButton("Связаться с отделом заботы", callback_data='section_1000'),
-        InlineKeyboardButton("Назад", callback_data='section_33'),
+        InlineKeyboardButton("Купить курс", callback_data='section_641'),
+        InlineKeyboardButton("Связаться с отделом заботы", callback_data='section_23'),
+        InlineKeyboardButton("Назад", callback_data='section_441'),
     ]
     return InlineKeyboardMarkup().add(*buttons)
 
 
 def create_inline_keyboard_section_641():
     buttons = [
-        InlineKeyboardButton("Оптимум", callback_data='section_741'),
-        InlineKeyboardButton("Ультра", callback_data='section_742'),
+        InlineKeyboardButton("Оптимум", callback_data='section_751'),
+        InlineKeyboardButton("Ультра", callback_data='section_752'),
         InlineKeyboardButton("Хочу в рассрочку", callback_data='section_73'),
-        InlineKeyboardButton("Связаться с отделом заботы", callback_data='section_1000'),
-        InlineKeyboardButton("Назад", callback_data='section_33'),
+        InlineKeyboardButton("Связаться с отделом заботы", callback_data='section_23'),
+        InlineKeyboardButton("Назад", callback_data='section_441'),
     ]
     return InlineKeyboardMarkup().add(*buttons)
 
@@ -442,7 +442,7 @@ def create_inline_keyboard_section_641():
 def create_inline_keyboard_section_751():
     buttons = [
         InlineKeyboardButton("Оплата", url="https://math-club.ru/signup.php?course=c&cost=discountplusterm&utm_source=tg"),
-        InlineKeyboardButton("Назад", callback_data='section_33'),
+        InlineKeyboardButton("Назад", callback_data='section_441'),
     ]
     return InlineKeyboardMarkup().add(*buttons)
 
@@ -450,7 +450,205 @@ def create_inline_keyboard_section_751():
 def create_inline_keyboard_section_752():
     buttons = [
         InlineKeyboardButton("Оплата", url="https://math-club.ru/signup.php?course=c&cost=discountproterm&utm_source=tg"),
-        InlineKeyboardButton("Назад", callback_data='section_33'),
+        InlineKeyboardButton("Назад", callback_data='section_441'),
     ]
     return InlineKeyboardMarkup().add(*buttons)
 
+#Тервер и матстат
+
+
+def create_inline_keyboard_section_451():
+    buttons = [
+        InlineKeyboardButton("Разбор еще одной задачи", callback_data='section_551'),
+        InlineKeyboardButton("Купить курс", callback_data='section_651'),
+        InlineKeyboardButton("Назад", callback_data='section_21'),
+    ]
+    return InlineKeyboardMarkup().add(*buttons)
+
+
+def create_inline_keyboard_section_551():
+    buttons = [
+        InlineKeyboardButton("Купить курс", callback_data='section_651'),
+        InlineKeyboardButton("Связаться с отделом заботы", callback_data='section_23'),
+        InlineKeyboardButton("Назад", callback_data='section_451'),
+    ]
+    return InlineKeyboardMarkup().add(*buttons)
+
+
+def create_inline_keyboard_section_651():
+    buttons = [
+        InlineKeyboardButton("Оптимум", callback_data='section_761'),
+        InlineKeyboardButton("Ультра", callback_data='section_762'),
+        InlineKeyboardButton("Хочу в рассрочку", callback_data='section_73'),
+        InlineKeyboardButton("Связаться с отделом заботы", callback_data='section_23'),
+        InlineKeyboardButton("Назад", callback_data='section_451'),
+    ]
+    return InlineKeyboardMarkup().add(*buttons)
+
+
+def create_inline_keyboard_section_761():
+    buttons = [
+        InlineKeyboardButton("Оплата", url="https://math-club.ru/signup.php?course=terver&cost=discountplusterm&utm_source=tg"),
+        InlineKeyboardButton("Назад", callback_data='section_441'),
+    ]
+    return InlineKeyboardMarkup().add(*buttons)
+
+
+def create_inline_keyboard_section_762():
+    buttons = [
+        InlineKeyboardButton("Оплата", url="https://math-club.ru/signup.php?course=terver&cost=discountproterm&utm_source=tg"),
+        InlineKeyboardButton("Назад", callback_data='section_441'),
+    ]
+    return InlineKeyboardMarkup().add(*buttons)
+
+
+def create_inline_keyboard_section_561():
+    buttons = [
+        InlineKeyboardButton("Купить курс", callback_data='section_661'),
+        InlineKeyboardButton("Связаться с отделом заботы", callback_data='section_23'),
+        InlineKeyboardButton("Назад", callback_data='section_451'),
+    ]
+    return InlineKeyboardMarkup().add(*buttons)
+
+
+def create_inline_keyboard_section_661():
+    buttons = [
+        InlineKeyboardButton("Оптимум", callback_data='section_771'),
+        InlineKeyboardButton("Ультра", callback_data='section_772'),
+        InlineKeyboardButton("Хочу в рассрочку", callback_data='section_73'),
+        InlineKeyboardButton("Связаться с отделом заботы", callback_data='section_23'),
+        InlineKeyboardButton("Назад", callback_data='section_561'),
+    ]
+    return InlineKeyboardMarkup().add(*buttons)
+
+
+def create_inline_keyboard_section_771():
+    buttons = [
+        InlineKeyboardButton("Оплата", url=" https://math-club.ru/signup.php?course=matfiz&cost=discountplusterm&utm_source=tg"),
+        InlineKeyboardButton("Назад", callback_data='section_561'),
+    ]
+    return InlineKeyboardMarkup().add(*buttons)
+
+
+def create_inline_keyboard_section_772():
+    buttons = [
+        InlineKeyboardButton("Оплата", url="https://math-club.ru/signup.php?course=matfiz&cost=discountproterm&utm_source=tg"),
+        InlineKeyboardButton("Назад", callback_data='section_561'),
+    ]
+    return InlineKeyboardMarkup().add(*buttons)
+
+
+def create_inline_keyboard_section_37():
+    buttons = [
+        InlineKeyboardButton("Химия", callback_data='section_471'),
+        InlineKeyboardButton("Органическая химия", callback_data='section_472'),
+        InlineKeyboardButton("Назад", callback_data='section_21')
+    ]
+    return InlineKeyboardMarkup().add(*buttons)
+
+
+def create_inline_keyboard_section_38():
+    buttons = [
+        InlineKeyboardButton("Купить курс", callback_data='section_381'),
+        InlineKeyboardButton("Связаться с отделом заботы", callback_data='section_23'),
+        InlineKeyboardButton("Назад", callback_data='section_21'),
+    ]
+    return InlineKeyboardMarkup().add(*buttons)
+
+
+def create_inline_keyboard_section_481():
+    buttons = [
+        InlineKeyboardButton("Оптимум", callback_data='section_581'),
+        InlineKeyboardButton("Ультра", callback_data='section_582'),
+        InlineKeyboardButton("Хочу в рассрочку", callback_data='section_73'),
+        InlineKeyboardButton("Связаться с отделом заботы", callback_data='section_23'),
+        InlineKeyboardButton("Назад", callback_data='section_38'),
+    ]
+    return InlineKeyboardMarkup().add(*buttons)
+
+
+def create_inline_keyboard_section_581():
+    buttons = [
+        InlineKeyboardButton("Оплата", url="https://math-club.ru/signup.php?course=fizchem&cost=discountplusterm&utm_source=tg"),
+        InlineKeyboardButton("Назад", callback_data='section_481'),
+    ]
+    return InlineKeyboardMarkup().add(*buttons)
+
+
+def create_inline_keyboard_section_582():
+    buttons = [
+        InlineKeyboardButton("Оплата", url="https://math-club.ru/signup.php?course=fizchem&cost=discountproterm&utm_source=tg"),
+        InlineKeyboardButton("Назад", callback_data='section_481'),
+    ]
+    return InlineKeyboardMarkup().add(*buttons)
+
+
+def create_inline_keyboard_section_38():
+    buttons = [
+        InlineKeyboardButton("Микроэкономика", callback_data='section_491'),
+        InlineKeyboardButton("Макроэкономика", callback_data='section_492'),
+        InlineKeyboardButton("Экономика", callback_data='section_493'),
+        InlineKeyboardButton("Финуч", callback_data='section_494'),
+        InlineKeyboardButton("Назад", callback_data='section_21'),
+    ]
+    return InlineKeyboardMarkup().add(*buttons)
+
+
+def create_inline_keyboard_section_22():
+    buttons = [
+        InlineKeyboardButton("Высшая математика", callback_data='section_1001'),
+        InlineKeyboardButton("Физика", callback_data='section_1002'),
+        InlineKeyboardButton("Пограммирование", callback_data='section_1003'),
+        InlineKeyboardButton("Экономическое направление", callback_data='section_1004'),
+        InlineKeyboardButton("Линал & Ангем", callback_data='section_1000'),
+        InlineKeyboardButton("Тервер & Матстат", callback_data='section_1000'),
+        InlineKeyboardButton("Матфиз", callback_data='section_1000'),
+        InlineKeyboardButton("Химия & органич. химия", callback_data='section_1000'),
+        InlineKeyboardButton("Физхим", callback_data='section_1000'),
+        InlineKeyboardButton("Назад", callback_data='section_1'),
+    ]
+    return InlineKeyboardMarkup().add(*buttons)
+
+
+def create_inline_keyboard_section_1001():
+    buttons = [
+        InlineKeyboardButton("интегралы & кратные интегралы", callback_data='section_1000'),
+        InlineKeyboardButton("ряды & ТФКП", callback_data='section_1000'),
+        InlineKeyboardButton("диффуры", callback_data='section_1000'),
+        InlineKeyboardButton("пределы & производные + фнп", callback_data='section_1000'),
+        InlineKeyboardButton("Назад", callback_data='section_22')
+    ]
+    return InlineKeyboardMarkup().add(*buttons)
+
+
+def create_inline_keyboard_section_1002():
+    buttons = [
+        InlineKeyboardButton("Электричество", callback_data='section_1000'),
+        InlineKeyboardButton("Магнетизм", callback_data='section_1000'),
+        InlineKeyboardButton("МКТ", callback_data='section_1000'),
+        InlineKeyboardButton("Кинематика", callback_data='section_1000'),
+        InlineKeyboardButton("Динамика", callback_data='section_1000'),
+        InlineKeyboardButton("Назад", callback_data='section_22')
+    ]
+    return InlineKeyboardMarkup().add(*buttons)
+
+
+def create_inline_keyboard_section_1003():
+    buttons = [
+        InlineKeyboardButton("C++", callback_data='section_1000'),
+        InlineKeyboardButton("Python", callback_data='section_1000'),
+        InlineKeyboardButton("SQL", callback_data='section_1000'),
+        InlineKeyboardButton("Назад", callback_data='section_22')
+    ]
+    return InlineKeyboardMarkup().add(*buttons)
+
+
+def create_inline_keyboard_section_1004():
+    buttons = [
+        InlineKeyboardButton("Микроэкономика", callback_data='section_1000'),
+        InlineKeyboardButton("Макроэкономика", callback_data='section_1000'),
+        InlineKeyboardButton("Экономика", callback_data='section_1000'),
+        InlineKeyboardButton("Финуч", callback_data='section_1000'),
+        InlineKeyboardButton("Назад", callback_data='section_22'),
+    ]
+    return InlineKeyboardMarkup().add(*buttons)

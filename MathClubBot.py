@@ -1,7 +1,8 @@
 import sqlite3
-
 import requests
 import logging
+from DataBases import *
+from datetime import datetime
 from aiogram.types import ContentType, Message
 from aiogram import Bot, Dispatcher, executor, types
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton, ReplyKeyboardRemove
@@ -19,7 +20,7 @@ from Texts import START_TEXT, HELP_TEXT, START_VIDEOS, MATH31, MATH41, MATH42, M
     LINAL541, LINAL641, LINAL751, LINAL752, TERVER451, TERVER551, TERVER651, TERVER761, \
     TERVER762, MATFIZ561, MATFIZ661, MATFIZ771, MATFIZ772, FIZHIM581, FIZHIM38, FIZHIM481, \
     FIZHIM582, RASSILKA23, POLEZNOVISMAT, POLEZNO22, POLEZNOPROGA, POLEZNOEKONOM, POLEZNOFIZIKA, \
-    POLEZNAYAPODPISKA1
+    POLEZNAYAPODPISKA1, EKONOM, HYMYA37
 from Media.videos import videoIntegral1, videoIntegral2, videoDiffuri1, videoDiffuri2, \
     videoRyadi1, videoRyadi2, videoPredeli1, videoPredeli2, videoKinematika1, videoKinematika2, \
     videoElectichestvo1, videoElectichestvo2, videoMKT1, videoMKT2, videoMagnetism1, videoMagnetism2, \
@@ -60,7 +61,7 @@ from inlineKB import create_inline_keyboard_section_1, create_inline_keyboard_se
     create_inline_keyboard_section_37, create_inline_keyboard_section_38, \
     create_inline_keyboard_section_22, create_inline_keyboard_section_1001, \
     create_inline_keyboard_section_1002, create_inline_keyboard_section_1003, \
-    create_inline_keyboard_section_1004
+    create_inline_keyboard_section_1004, create_inline_keyboard_section_39
 bot = Bot(TOKEN_API)
 dp = Dispatcher(bot)
 url = f"https://api.telegram.org/bot{TOKEN_API}/getUpdates"
@@ -360,7 +361,7 @@ async def process_callback_section(callback_query: types.CallbackQuery):
     elif section == 37:
         keyboard = create_inline_keyboard_section_37()
         await bot.send_message(callback_query.from_user.id,
-                               text=f"{callback_query.from_user.full_name}" + MATFIZ772,
+                               text=f"{callback_query.from_user.full_name}" + HYMYA37,
                                reply_markup=keyboard)
     elif section == 471:
         await bot.send_message(callback_query.from_user.id,
@@ -388,18 +389,23 @@ async def process_callback_section(callback_query: types.CallbackQuery):
         await bot.send_message(callback_query.from_user.id,
                                text=f"{callback_query.from_user.full_name}" + FIZHIM582,
                                reply_markup=keyboard)
+    elif section == 39:
+        keyboard = create_inline_keyboard_section_39()
+        await bot.send_message(callback_query.from_user.id,
+                               text=EKONOM,
+                               reply_markup=keyboard)
     elif section == 491:
         await bot.send_message(callback_query.from_user.id,
-                               text=f"{callback_query.from_user.full_name}" + PROG741)
+                               text=PROG432)
     elif section == 492:
         await bot.send_message(callback_query.from_user.id,
-                               text=f"{callback_query.from_user.full_name}" + PROG742)
+                               text=PROG432)
     elif section == 493:
         await bot.send_message(callback_query.from_user.id,
-                               text=f"{callback_query.from_user.full_name}" + PROG741)
+                               text=PROG432)
     elif section == 494:
         await bot.send_message(callback_query.from_user.id,
-                               text=f"{callback_query.from_user.full_name}" + PROG742)
+                               text=PROG432)
     elif section == 23:
         await bot.send_message(callback_query.from_user.id,
                                text=RASSILKA23)
@@ -439,22 +445,6 @@ async def process_callback_section(callback_query: types.CallbackQuery):
 @dp.message_handler(commands=['start'])
 async def start(message: types.Message):
     markup = create_inline_keyboard_section_1()
-    connect = sqlite3.connect('users.db')
-    cursor = connect.cursor()
-
-    cursor.execute("""CREATE TABLE IF NOT EXISTS login_id(
-        id INTEGER,
-        
-    )""")
-    connect.commit()
-
-    people_id = message.chat.id
-    cursor.execute(f"SELECT id FROM login_id WHERE id = {people_id}")
-    data = cursor.fetchone()
-    if data is None:
-        user_id = [message.chat.id]
-        cursor.execute("INSERT INTO login_id VALUES(?);", user_id)
-        connect.commit()
     await message.answer(f"Привет. {message.chat.full_name}!" + START_TEXT,
                          reply_markup=markup)
 
@@ -470,7 +460,7 @@ async def send_video_file_id(message: Message):
 
 
 if __name__ == '__main__':
-    executor.start_polling(dp, skip_updates=True)
+    executor.start_polling(dp, skip_updates=True,)
 
 
 

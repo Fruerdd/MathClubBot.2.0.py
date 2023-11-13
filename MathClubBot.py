@@ -1,19 +1,15 @@
-import sqlite3
-import requests
-import logging
-from DataBases import *
-from datetime import datetime
 from aiogram.types import ContentType, Message
 from aiogram import Bot, Dispatcher, executor, types
-from aiogram.types import ReplyKeyboardMarkup, KeyboardButton, ReplyKeyboardRemove
-from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton, ReplyKeyboardMarkup, KeyboardButton
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
-from aiogram.dispatcher import FSMContext
-from aiogram.dispatcher.filters import Command
 from config import TOKEN_API
+from helpers.DataBases import start_table, update_last_step, cursor, connection, labels_create, labels_edit, info_table
+from helpers.timezone import get_msk_time
 import asyncio
-from aiogram.dispatcher.filters import Text
-from Texts import START_TEXT, HELP_TEXT, START_VIDEOS, MATH31, MATH41, MATH42, MATH43, MATH44, \
+import json
+import os
+import requests
+from Web.WebSockets import send_data_to_server, start_update
+from Texts import START_TEXT, START_VIDEOS, MATH31, MATH41, MATH42, MATH43, MATH44, \
     MATH51, MATH52, MATH53, MATH54, MATH61, MATH62, MATH63, MATH64, MATH71, MATH72, PHYS32, PHYS411, \
     PHYS412, PHYS413, PHYS414, PHYS415, PHYS511, PHYS512, PHYS513, PHYS514, PHYS515, PHYS611, PHYS731, \
     PHYS732, PROG33, PROG742, PROG431, PROG432, PROG433, PROG531, PROG631, PROG741, LINAL441, \
@@ -25,7 +21,7 @@ from Media.videos import videoIntegral1, videoIntegral2, videoDiffuri1, videoDif
     videoRyadi1, videoRyadi2, videoPredeli1, videoPredeli2, videoKinematika1, videoKinematika2, \
     videoElectichestvo1, videoElectichestvo2, videoMKT1, videoMKT2, videoMagnetism1, videoMagnetism2, \
     videoDinamika1, videoDinamika2, videoC1, videoC2, videoLinal1, videoLinal2, videoMatfiz1, videoTerver1, \
-    videoTerver2, videFizHim
+    videoTerver2
 from Media.photos import photoRyadi, photoIntegrali, photoDiffuri, photoPredeli, photoPhysics, \
     photoC, photoLinal, photoMatfiz, photoTerver
 from inlineKB import create_inline_keyboard_section_1, create_inline_keyboard_section_21,\
@@ -70,6 +66,9 @@ storage = MemoryStorage()
 dp = Dispatcher(bot, storage=storage)
 
 loop = asyncio.get_event_loop()
+all_labels = []
+
+messages_store = []
 
 
 @dp.callback_query_handler(lambda c: c.data.startswith('section'))
@@ -440,11 +439,21 @@ async def process_callback_section(callback_query: types.CallbackQuery):
                                text=POLEZNAYAPODPISKA1)
         await bot.send_message(chat_id=callback_query.from_user.id,
                                text="А рассылочка то работает и даже удобнее")
+    update_last_step(tg_id=callback_query.from_user.id, date=get_msk_time(), section=section)
+    all_labels.append(section)
+    labels_create()
+    labels_edit(tg_id=int(callback_query.from_user.id), all_labels=str(all_labels))
 
 
 @dp.message_handler(commands=['start'])
 async def start(message: types.Message):
     markup = create_inline_keyboard_section_1()
+    start_table()
+    labels_create()
+    all_labels.append(1)
+    info_table(tg_id=int(message.from_user.id), username=message.from_user.full_name)
+    update_last_step(message.from_user.id, get_msk_time(), "1")
+    labels_edit(message.from_user.id, all_labels=str(all_labels))
     await message.answer(f"Привет. {message.chat.full_name}!" + START_TEXT,
                          reply_markup=markup)
 
@@ -460,7 +469,7 @@ async def send_video_file_id(message: Message):
 
 
 if __name__ == '__main__':
-    executor.start_polling(dp, skip_updates=True,)
+    executor.start_polling(dp, skip_updates=True)
 
 
 
